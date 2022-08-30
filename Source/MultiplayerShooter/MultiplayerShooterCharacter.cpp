@@ -58,12 +58,12 @@ AMultiplayerShooterCharacter::AMultiplayerShooterCharacter():
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
 
 	// Find the Steam subsystem
-	IOnlineSubsystem* OnlineSubsystem = IOnlineSubsystem::Get();
-	if(OnlineSubsystem)
-	{
-		OnlineSessionInterface = OnlineSubsystem->GetSessionInterface();
-		if(GEngine){GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Blue, FString::Printf(TEXT("Found subsystem : %s"), *OnlineSubsystem->GetSubsystemName().ToString()));}
-	}
+	// IOnlineSubsystem* OnlineSubsystem = IOnlineSubsystem::Get();
+	// if(OnlineSubsystem)
+	// {
+	// 	OnlineSessionInterface = OnlineSubsystem->GetSessionInterface();
+	// 	if(GEngine){GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Blue, FString::Printf(TEXT("Found subsystem : %s"), *OnlineSubsystem->GetSubsystemName().ToString()));}
+	// }
 }
 
 /***

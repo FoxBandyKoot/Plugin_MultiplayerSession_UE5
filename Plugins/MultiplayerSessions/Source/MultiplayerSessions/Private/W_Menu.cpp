@@ -38,8 +38,9 @@ bool UW_Menu::Initialize()
  * @param _NumPublicConnections Number of allowed connections
  * @param _MatchType Kind of game
  */
-void UW_Menu::MenuSetup(int32 _NumPublicConnections, FString _MatchType)
+void UW_Menu::MenuSetup(int32 _NumPublicConnections, FString _MatchType, FString _LobbyPath)
 {
+    PathToLobby = FString::Printf(TEXT("%s?listen"), *_LobbyPath);
     NumPublicConnections = _NumPublicConnections;
     MatchType = _MatchType;
 
@@ -114,7 +115,7 @@ void UW_Menu::OnCreateSession(bool bWasSuccessful)
         UWorld* World = GetWorld();
         if(World)
         {   
-            if(World->ServerTravel("/Game/ThirdPerson/Maps/Lobby?listen"))
+            if(World->ServerTravel(PathToLobby))
             {
                 if(GEngine){GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Green, FString::Printf(TEXT("In the lobby")));}
             }

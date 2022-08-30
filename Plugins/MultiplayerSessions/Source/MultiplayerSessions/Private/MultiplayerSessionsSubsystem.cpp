@@ -41,12 +41,13 @@ void UMultiplayerSessionsSubsystem::CreateSession(int32 _NumPublicConnections, F
 	LastSessionSettings = MakeShareable(new FOnlineSessionSettings()); // MakeShareable allows to init SharedPointer, we give it a constructor as a parameter
 	LastSessionSettings->bIsLANMatch = IOnlineSubsystem::Get()->GetSubsystemName() == "NULL" ? true : false;
 	LastSessionSettings->NumPublicConnections = _NumPublicConnections;
-	LastSessionSettings->bAllowJoinInProgress = true; // Allow players to join even if the session started
+	LastSessionSettings->bAllowJoinInProgress = true; // Allow player s to join even if the session started
 	LastSessionSettings->bAllowJoinViaPresence = true; // Allows Steam to let players of the closest region join the server
 	LastSessionSettings->bShouldAdvertise = true; // Allows Steam to advertise the session
 	LastSessionSettings->bUsesPresence = true; // Allows Steam to search players which belongs to the region of the server in priority
 	LastSessionSettings->bUseLobbiesIfAvailable = true; 
 	LastSessionSettings->Set(FName("MatchType"), _MatchType, EOnlineDataAdvertisementType::ViaOnlineServiceAndPing);
+	LastSessionSettings->BuildUniqueId = 1; // Allow to find other hosted sessions
 
 	const ULocalPlayer* LocalPlayer = GetWorld()->GetFirstLocalPlayerFromController();
 	if(!SessionInterface->CreateSession(*LocalPlayer->GetPreferredUniqueNetId(), NAME_GameSession, *LastSessionSettings))
