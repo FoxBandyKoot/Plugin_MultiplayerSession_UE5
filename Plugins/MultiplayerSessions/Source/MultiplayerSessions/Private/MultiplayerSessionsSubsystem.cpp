@@ -32,31 +32,37 @@ void UMultiplayerSessionsSubsystem::CreateSession(int32 _NumPublicConnections, F
 	FNamedOnlineSession* ExistingSession = SessionInterface->GetNamedSession(NAME_GameSession);
 	if(ExistingSession)
 	{
-		SessionInterface->DestroySession(NAME_GameSession);
-	}
-
-	// The interface has a list of "delegates", which are objects which react to events and trigger callback functions
-	CreateSessionCompleteDelegateHandle = SessionInterface->AddOnCreateSessionCompleteDelegate_Handle(CreateSessionCompleteDelegate);
-
-	LastSessionSettings = MakeShareable(new FOnlineSessionSettings()); // MakeShareable allows to init SharedPointer, we give it a constructor as a parameter
-	LastSessionSettings->bIsLANMatch = IOnlineSubsystem::Get()->GetSubsystemName() == "NULL" ? true : false;
-	LastSessionSettings->NumPublicConnections = _NumPublicConnections;
-	LastSessionSettings->bAllowJoinInProgress = true; // Allow player s to join even if the session started
-	LastSessionSettings->bAllowJoinViaPresence = true; // Allows Steam to let players of the closest region join the server
-	LastSessionSettings->bShouldAdvertise = true; // Allows Steam to advertise the session
-	LastSessionSettings->bUsesPresence = true; // Allows Steam to search players which belongs to the region of the server in priority
-	LastSessionSettings->bUseLobbiesIfAvailable = true; 
-	LastSessionSettings->Set(FName("MatchType"), _MatchType, EOnlineDataAdvertisementType::ViaOnlineServiceAndPing);
-	LastSessionSettings->BuildUniqueId = 1; // Allow to find other hosted sessions
-
-	const ULocalPlayer* LocalPlayer = GetWorld()->GetFirstLocalPlayerFromController();
-	if(!SessionInterface->CreateSession(*LocalPlayer->GetPreferredUniqueNetId(), NAME_GameSession, *LastSessionSettings))
+        if(GEngine){GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Red, FString::Printf(TEXT("Start destroying an old session.")));}
+        bCreateSessionOnDestroy = true;
+	    LastNumPublicConnections = _NumPublicConnections;
+	    LastMatchType = _MatchType;
+        DestroySession();
+	} 
+    else
     {
-        // Remove the delegate handle from the list if the creation failed
-        SessionInterface->ClearOnCreateSessionCompleteDelegate_Handle(CreateSessionCompleteDelegateHandle);
+        // The interface has a list of "delegates", which are objects which react to events and trigger callback functions
+        CreateSessionCompleteDelegateHandle = SessionInterface->AddOnCreateSessionCompleteDelegate_Handle(CreateSessionCompleteDelegate);
 
-        // Our own custom delegate broadcast to the UW_Menu
-        CustomOnCreateSessionCompleteDelegate.Broadcast(false);
+        LastSessionSettings = MakeShareable(new FOnlineSessionSettings()); // MakeShareable allows to init SharedPointer, we give it a constructor as a parameter
+        LastSessionSettings->bIsLANMatch = IOnlineSubsystem::Get()->GetSubsystemName() == "NULL" ? true : false;
+        LastSessionSettings->NumPublicConnections = _NumPublicConnections;
+        LastSessionSettings->bAllowJoinInProgress = true; // Allow player s to join even if the session started
+        LastSessionSettings->bAllowJoinViaPresence = true; // Allows Steam to let players of the closest region join the server
+        LastSessionSettings->bShouldAdvertise = true; // Allows Steam to advertise the session
+        LastSessionSettings->bUsesPresence = true; // Allows Steam to search players which belongs to the region of the server in priority
+        LastSessionSettings->bUseLobbiesIfAvailable = true; 
+        LastSessionSettings->Set(FName("MatchType"), _MatchType, EOnlineDataAdvertisementType::ViaOnlineServiceAndPing);
+        LastSessionSettings->BuildUniqueId = 1; // Allow to find other hosted sessions
+
+        const ULocalPlayer* LocalPlayer = GetWorld()->GetFirstLocalPlayerFromController();
+        if(!SessionInterface->CreateSession(*LocalPlayer->GetPreferredUniqueNetId(), NAME_GameSession, *LastSessionSettings))
+        {
+            // Remove the delegate handle from the list if the creation failed
+            SessionInterface->ClearOnCreateSessionCompleteDelegate_Handle(CreateSessionCompleteDelegateHandle);
+
+            // Our own custom delegate broadcast to the UW_Menu
+            CustomOnCreateSessionCompleteDelegate.Broadcast(false);
+        }
     }
 }
 
@@ -164,12 +170,37 @@ void UMultiplayerSessionsSubsystem::OnJoinSessionComplete(FName SessionName, EOn
 
 void UMultiplayerSessionsSubsystem::DestroySession()
 {
+    if(!SessionInterface)
+    {
+        CustomOnDestroySessionCompleteDelegate.Broadcast(false);
+        if(GEngine){GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Red, FString::Printf(TEXT("SessionInterface is invalid.")));}
+        return;
+    }
+
+    DestroySessionCompleteDelegateHandle = SessionInterface->AddOnDestroySessionCompleteDelegate_Handle(DestroySessionCompleteDelegate);
     
+    if(!SessionInterface->DestroySession(NAME_GameSession))
+    {
+        CustomOnDestroySessionCompleteDelegate.Broadcast(false);
+        SessionInterface->ClearOnDestroySessionCompleteDelegate_Handle(DestroySessionCompleteDelegateHandle);
+        if(GEngine){GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Red, FString::Printf(TEXT("Failed to destroy the session : %s."), NAME_GameSession));}
+    }
 }
 
 void UMultiplayerSessionsSubsystem::OnDestroySessionComplete(FName SessionName, bool bWasSuccessfull)
 {
-    
+    if(!SessionInterface)
+    {
+        SessionInterface->ClearOnDestroySessionCompleteDelegate_Handle(DestroySessionCompleteDelegateHandle);
+        if(GEngine){GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Red, FString::Printf(TEXT("SessionInterface is invalid.")));}
+        return;
+    }
+    if(bWasSuccessfull && bCreateSessionOnDestroy)
+    {
+        bCreateSessionOnDestroy = false;
+        CreateSession(LastNumPublicConnections, LastMatchType);
+    }
+    CustomOnDestroySessionCompleteDelegate.Broadcast(bWasSuccessfull);
 }
 
 void UMultiplayerSessionsSubsystem::StartSession()
