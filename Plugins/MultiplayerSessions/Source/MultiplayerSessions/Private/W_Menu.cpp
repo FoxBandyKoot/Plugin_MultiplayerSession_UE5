@@ -223,10 +223,10 @@ void UW_Menu::OnStartSession(bool bWasSuccessful)
  * @param InLevel New map
  * @param InWorld New world
  */
-void UW_Menu::OnLevelRemovedFromWorld(ULevel* InLevel, UWorld* InWorld)
+void UW_Menu::NativeDestruct()
 {
     UW_Menu::MenuTearDown();
-    Super::OnLevelRemovedFromWorld(InLevel, InWorld);
+    Super::NativeDestruct();
 }
 
 /**
@@ -236,7 +236,7 @@ void UW_Menu::OnLevelRemovedFromWorld(ULevel* InLevel, UWorld* InWorld)
 void UW_Menu::MenuTearDown()
 {
     RemoveFromParent();
-            UWorld* World = GetWorld();
+        UWorld* World = GetWorld();
         if(World)
         {
             APlayerController* PlayerController = World->GetFirstPlayerController();

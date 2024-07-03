@@ -21,7 +21,7 @@ protected:
 
 	// Constructor
 	virtual bool Initialize() override;
-	virtual void OnLevelRemovedFromWorld(ULevel* InLevel, UWorld* InWorld) override;
+	virtual void NativeDestruct() override;
 
 	/**
 	 * @brief Callbacks for the custom delegates on the MultiplayerSessionsSubsystem

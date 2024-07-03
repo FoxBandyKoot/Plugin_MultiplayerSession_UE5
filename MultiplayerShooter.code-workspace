@@ -6,16 +6,2050 @@
 		},
 		{
 			"name": "UE5",
-			"path": "E:\\UNREAL\\UE_5.0"
+			"path": "E:\\UNREAL\\UE_5.3"
 		}
 	],
 	"settings": {
-		"typescript.tsc.autoDetect": "off"
+		"typescript.tsc.autoDetect": "off",
+		"npm.autoDetect": "off"
 	},
 	"extensions": {
 		"recommendations": [
 			"ms-vscode.cpptools",
 			"ms-dotnettools.csharp"
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "MultiplayerShooter Win64 Debug Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Win64",
+					"Debug",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Win64 Debug Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Win64",
+					"Debug",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerShooter Win64 Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Win64 Debug Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Win64",
+					"Debug",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Win64 DebugGame Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Win64",
+					"DebugGame",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Win64 DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Win64",
+					"DebugGame",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerShooter Win64 DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Win64 DebugGame Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Win64",
+					"DebugGame",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Win64 Development Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Win64",
+					"Development",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Win64 Development Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Win64",
+					"Development",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerShooter Win64 Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Win64 Development Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Win64",
+					"Development",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Win64 Test Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Win64",
+					"Test",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Win64 Test Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Win64",
+					"Test",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerShooter Win64 Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Win64 Test Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Win64",
+					"Test",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Win64 Shipping Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Win64",
+					"Shipping",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Win64 Shipping Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Win64",
+					"Shipping",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerShooter Win64 Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Win64 Shipping Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Win64",
+					"Shipping",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Android Debug Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Android",
+					"Debug",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Android Debug Cook+Deploy",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+				"args": [
+					"BuildCookRun",
+					"-ScriptsForProject=E:/MyGames/MultiplayerShooter/MultiplayerShooter.uproject",
+					"-Project=E:/MyGames/MultiplayerShooter/MultiplayerShooter.uproject",
+					"-noP4",
+					"-ClientConfig=Debug",
+					"-ServerConfig=Debug",
+					"-NoCompileEditor",
+					"-utf8output",
+					"-Platform=Android",
+					"-TargetPlatform=Android",
+					"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+					"-Compressed",
+					"-IterativeCooking",
+					"-IterativeDeploy",
+					"-Cook",
+					"-Stage",
+					"-Deploy"
+				],
+				"dependsOn": [
+					"MultiplayerShooterEditor Win64 Development Build",
+					"MultiplayerShooter Android Debug Build"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Android Debug Cook",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+				"args": [
+					"BuildCookRun",
+					"-ScriptsForProject=E:/MyGames/MultiplayerShooter/MultiplayerShooter.uproject",
+					"-Project=E:/MyGames/MultiplayerShooter/MultiplayerShooter.uproject",
+					"-noP4",
+					"-ClientConfig=Debug",
+					"-ServerConfig=Debug",
+					"-NoCompileEditor",
+					"-utf8output",
+					"-Platform=Android",
+					"-TargetPlatform=Android",
+					"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+					"-Compressed",
+					"-IterativeCooking",
+					"-IterativeDeploy",
+					"-Cook"
+				],
+				"dependsOn": [
+					"MultiplayerShooterEditor Win64 Development Build",
+					"MultiplayerShooter Android Debug Build"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Android Debug Deploy",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+				"args": [
+					"BuildCookRun",
+					"-ScriptsForProject=E:/MyGames/MultiplayerShooter/MultiplayerShooter.uproject",
+					"-Project=E:/MyGames/MultiplayerShooter/MultiplayerShooter.uproject",
+					"-noP4",
+					"-ClientConfig=Debug",
+					"-ServerConfig=Debug",
+					"-NoCompileEditor",
+					"-utf8output",
+					"-Platform=Android",
+					"-TargetPlatform=Android",
+					"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+					"-Compressed",
+					"-IterativeCooking",
+					"-IterativeDeploy",
+					"-DeploySoToDevice",
+					"-SkipCook",
+					"-Stage",
+					"-Deploy"
+				],
+				"dependsOn": [
+					"MultiplayerShooter Android Debug Build"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Android Debug Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Android",
+					"Debug",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerShooter Android Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Android Debug Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Android",
+					"Debug",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Android DebugGame Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Android",
+					"DebugGame",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Android DebugGame Cook+Deploy",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+				"args": [
+					"BuildCookRun",
+					"-ScriptsForProject=E:/MyGames/MultiplayerShooter/MultiplayerShooter.uproject",
+					"-Project=E:/MyGames/MultiplayerShooter/MultiplayerShooter.uproject",
+					"-noP4",
+					"-ClientConfig=DebugGame",
+					"-ServerConfig=DebugGame",
+					"-NoCompileEditor",
+					"-utf8output",
+					"-Platform=Android",
+					"-TargetPlatform=Android",
+					"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+					"-Compressed",
+					"-IterativeCooking",
+					"-IterativeDeploy",
+					"-Cook",
+					"-Stage",
+					"-Deploy"
+				],
+				"dependsOn": [
+					"MultiplayerShooterEditor Win64 Development Build",
+					"MultiplayerShooter Android DebugGame Build"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Android DebugGame Cook",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+				"args": [
+					"BuildCookRun",
+					"-ScriptsForProject=E:/MyGames/MultiplayerShooter/MultiplayerShooter.uproject",
+					"-Project=E:/MyGames/MultiplayerShooter/MultiplayerShooter.uproject",
+					"-noP4",
+					"-ClientConfig=DebugGame",
+					"-ServerConfig=DebugGame",
+					"-NoCompileEditor",
+					"-utf8output",
+					"-Platform=Android",
+					"-TargetPlatform=Android",
+					"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+					"-Compressed",
+					"-IterativeCooking",
+					"-IterativeDeploy",
+					"-Cook"
+				],
+				"dependsOn": [
+					"MultiplayerShooterEditor Win64 Development Build",
+					"MultiplayerShooter Android DebugGame Build"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Android DebugGame Deploy",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+				"args": [
+					"BuildCookRun",
+					"-ScriptsForProject=E:/MyGames/MultiplayerShooter/MultiplayerShooter.uproject",
+					"-Project=E:/MyGames/MultiplayerShooter/MultiplayerShooter.uproject",
+					"-noP4",
+					"-ClientConfig=DebugGame",
+					"-ServerConfig=DebugGame",
+					"-NoCompileEditor",
+					"-utf8output",
+					"-Platform=Android",
+					"-TargetPlatform=Android",
+					"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+					"-Compressed",
+					"-IterativeCooking",
+					"-IterativeDeploy",
+					"-DeploySoToDevice",
+					"-SkipCook",
+					"-Stage",
+					"-Deploy"
+				],
+				"dependsOn": [
+					"MultiplayerShooter Android DebugGame Build"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Android DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Android",
+					"DebugGame",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerShooter Android DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Android DebugGame Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Android",
+					"DebugGame",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Android Development Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Android",
+					"Development",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Android Development Cook+Deploy",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+				"args": [
+					"BuildCookRun",
+					"-ScriptsForProject=E:/MyGames/MultiplayerShooter/MultiplayerShooter.uproject",
+					"-Project=E:/MyGames/MultiplayerShooter/MultiplayerShooter.uproject",
+					"-noP4",
+					"-ClientConfig=Development",
+					"-ServerConfig=Development",
+					"-NoCompileEditor",
+					"-utf8output",
+					"-Platform=Android",
+					"-TargetPlatform=Android",
+					"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+					"-Compressed",
+					"-IterativeCooking",
+					"-IterativeDeploy",
+					"-Cook",
+					"-Stage",
+					"-Deploy"
+				],
+				"dependsOn": [
+					"MultiplayerShooterEditor Win64 Development Build",
+					"MultiplayerShooter Android Development Build"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Android Development Cook",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+				"args": [
+					"BuildCookRun",
+					"-ScriptsForProject=E:/MyGames/MultiplayerShooter/MultiplayerShooter.uproject",
+					"-Project=E:/MyGames/MultiplayerShooter/MultiplayerShooter.uproject",
+					"-noP4",
+					"-ClientConfig=Development",
+					"-ServerConfig=Development",
+					"-NoCompileEditor",
+					"-utf8output",
+					"-Platform=Android",
+					"-TargetPlatform=Android",
+					"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+					"-Compressed",
+					"-IterativeCooking",
+					"-IterativeDeploy",
+					"-Cook"
+				],
+				"dependsOn": [
+					"MultiplayerShooterEditor Win64 Development Build",
+					"MultiplayerShooter Android Development Build"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Android Development Deploy",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+				"args": [
+					"BuildCookRun",
+					"-ScriptsForProject=E:/MyGames/MultiplayerShooter/MultiplayerShooter.uproject",
+					"-Project=E:/MyGames/MultiplayerShooter/MultiplayerShooter.uproject",
+					"-noP4",
+					"-ClientConfig=Development",
+					"-ServerConfig=Development",
+					"-NoCompileEditor",
+					"-utf8output",
+					"-Platform=Android",
+					"-TargetPlatform=Android",
+					"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+					"-Compressed",
+					"-IterativeCooking",
+					"-IterativeDeploy",
+					"-DeploySoToDevice",
+					"-SkipCook",
+					"-Stage",
+					"-Deploy"
+				],
+				"dependsOn": [
+					"MultiplayerShooter Android Development Build"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Android Development Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Android",
+					"Development",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerShooter Android Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Android Development Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Android",
+					"Development",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Android Test Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Android",
+					"Test",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Android Test Cook+Deploy",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+				"args": [
+					"BuildCookRun",
+					"-ScriptsForProject=E:/MyGames/MultiplayerShooter/MultiplayerShooter.uproject",
+					"-Project=E:/MyGames/MultiplayerShooter/MultiplayerShooter.uproject",
+					"-noP4",
+					"-ClientConfig=Test",
+					"-ServerConfig=Test",
+					"-NoCompileEditor",
+					"-utf8output",
+					"-Platform=Android",
+					"-TargetPlatform=Android",
+					"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+					"-Compressed",
+					"-IterativeCooking",
+					"-IterativeDeploy",
+					"-Cook",
+					"-Stage",
+					"-Deploy"
+				],
+				"dependsOn": [
+					"MultiplayerShooterEditor Win64 Development Build",
+					"MultiplayerShooter Android Test Build"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Android Test Cook",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+				"args": [
+					"BuildCookRun",
+					"-ScriptsForProject=E:/MyGames/MultiplayerShooter/MultiplayerShooter.uproject",
+					"-Project=E:/MyGames/MultiplayerShooter/MultiplayerShooter.uproject",
+					"-noP4",
+					"-ClientConfig=Test",
+					"-ServerConfig=Test",
+					"-NoCompileEditor",
+					"-utf8output",
+					"-Platform=Android",
+					"-TargetPlatform=Android",
+					"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+					"-Compressed",
+					"-IterativeCooking",
+					"-IterativeDeploy",
+					"-Cook"
+				],
+				"dependsOn": [
+					"MultiplayerShooterEditor Win64 Development Build",
+					"MultiplayerShooter Android Test Build"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Android Test Deploy",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+				"args": [
+					"BuildCookRun",
+					"-ScriptsForProject=E:/MyGames/MultiplayerShooter/MultiplayerShooter.uproject",
+					"-Project=E:/MyGames/MultiplayerShooter/MultiplayerShooter.uproject",
+					"-noP4",
+					"-ClientConfig=Test",
+					"-ServerConfig=Test",
+					"-NoCompileEditor",
+					"-utf8output",
+					"-Platform=Android",
+					"-TargetPlatform=Android",
+					"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+					"-Compressed",
+					"-IterativeCooking",
+					"-IterativeDeploy",
+					"-DeploySoToDevice",
+					"-SkipCook",
+					"-Stage",
+					"-Deploy"
+				],
+				"dependsOn": [
+					"MultiplayerShooter Android Test Build"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Android Test Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Android",
+					"Test",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerShooter Android Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Android Test Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Android",
+					"Test",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Android Shipping Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Android",
+					"Shipping",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Android Shipping Cook+Deploy",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+				"args": [
+					"BuildCookRun",
+					"-ScriptsForProject=E:/MyGames/MultiplayerShooter/MultiplayerShooter.uproject",
+					"-Project=E:/MyGames/MultiplayerShooter/MultiplayerShooter.uproject",
+					"-noP4",
+					"-ClientConfig=Shipping",
+					"-ServerConfig=Shipping",
+					"-NoCompileEditor",
+					"-utf8output",
+					"-Platform=Android",
+					"-TargetPlatform=Android",
+					"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+					"-Compressed",
+					"-IterativeCooking",
+					"-IterativeDeploy",
+					"-Cook",
+					"-Stage",
+					"-Deploy"
+				],
+				"dependsOn": [
+					"MultiplayerShooterEditor Win64 Development Build",
+					"MultiplayerShooter Android Shipping Build"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Android Shipping Cook",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+				"args": [
+					"BuildCookRun",
+					"-ScriptsForProject=E:/MyGames/MultiplayerShooter/MultiplayerShooter.uproject",
+					"-Project=E:/MyGames/MultiplayerShooter/MultiplayerShooter.uproject",
+					"-noP4",
+					"-ClientConfig=Shipping",
+					"-ServerConfig=Shipping",
+					"-NoCompileEditor",
+					"-utf8output",
+					"-Platform=Android",
+					"-TargetPlatform=Android",
+					"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+					"-Compressed",
+					"-IterativeCooking",
+					"-IterativeDeploy",
+					"-Cook"
+				],
+				"dependsOn": [
+					"MultiplayerShooterEditor Win64 Development Build",
+					"MultiplayerShooter Android Shipping Build"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Android Shipping Deploy",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+				"args": [
+					"BuildCookRun",
+					"-ScriptsForProject=E:/MyGames/MultiplayerShooter/MultiplayerShooter.uproject",
+					"-Project=E:/MyGames/MultiplayerShooter/MultiplayerShooter.uproject",
+					"-noP4",
+					"-ClientConfig=Shipping",
+					"-ServerConfig=Shipping",
+					"-NoCompileEditor",
+					"-utf8output",
+					"-Platform=Android",
+					"-TargetPlatform=Android",
+					"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+					"-Compressed",
+					"-IterativeCooking",
+					"-IterativeDeploy",
+					"-DeploySoToDevice",
+					"-SkipCook",
+					"-Stage",
+					"-Deploy"
+				],
+				"dependsOn": [
+					"MultiplayerShooter Android Shipping Build"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Android Shipping Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Android",
+					"Shipping",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerShooter Android Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Android Shipping Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Android",
+					"Shipping",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Linux Debug Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Linux",
+					"Debug",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Linux Debug Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Linux",
+					"Debug",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerShooter Linux Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Linux Debug Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Linux",
+					"Debug",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Linux DebugGame Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Linux",
+					"DebugGame",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Linux DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Linux",
+					"DebugGame",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerShooter Linux DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Linux DebugGame Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Linux",
+					"DebugGame",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Linux Development Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Linux",
+					"Development",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Linux Development Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Linux",
+					"Development",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerShooter Linux Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Linux Development Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Linux",
+					"Development",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Linux Test Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Linux",
+					"Test",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Linux Test Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Linux",
+					"Test",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerShooter Linux Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Linux Test Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Linux",
+					"Test",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Linux Shipping Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Linux",
+					"Shipping",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Linux Shipping Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Linux",
+					"Shipping",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerShooter Linux Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter Linux Shipping Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerShooter",
+					"Linux",
+					"Shipping",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter LinuxArm64 Debug Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"LinuxArm64",
+					"Debug",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter LinuxArm64 Debug Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"LinuxArm64",
+					"Debug",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerShooter LinuxArm64 Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter LinuxArm64 Debug Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerShooter",
+					"LinuxArm64",
+					"Debug",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter LinuxArm64 DebugGame Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"LinuxArm64",
+					"DebugGame",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter LinuxArm64 DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"LinuxArm64",
+					"DebugGame",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerShooter LinuxArm64 DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter LinuxArm64 DebugGame Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerShooter",
+					"LinuxArm64",
+					"DebugGame",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter LinuxArm64 Development Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"LinuxArm64",
+					"Development",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter LinuxArm64 Development Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"LinuxArm64",
+					"Development",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerShooter LinuxArm64 Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter LinuxArm64 Development Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerShooter",
+					"LinuxArm64",
+					"Development",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter LinuxArm64 Test Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"LinuxArm64",
+					"Test",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter LinuxArm64 Test Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"LinuxArm64",
+					"Test",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerShooter LinuxArm64 Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter LinuxArm64 Test Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerShooter",
+					"LinuxArm64",
+					"Test",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter LinuxArm64 Shipping Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"LinuxArm64",
+					"Shipping",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter LinuxArm64 Shipping Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooter",
+					"LinuxArm64",
+					"Shipping",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerShooter LinuxArm64 Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooter LinuxArm64 Shipping Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerShooter",
+					"LinuxArm64",
+					"Shipping",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooterEditor Win64 Debug Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooterEditor",
+					"Win64",
+					"Debug",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooterEditor Win64 Debug Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooterEditor",
+					"Win64",
+					"Debug",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerShooterEditor Win64 Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooterEditor Win64 Debug Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerShooterEditor",
+					"Win64",
+					"Debug",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooterEditor Win64 DebugGame Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooterEditor",
+					"Win64",
+					"DebugGame",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooterEditor Win64 DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooterEditor",
+					"Win64",
+					"DebugGame",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerShooterEditor Win64 DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooterEditor Win64 DebugGame Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerShooterEditor",
+					"Win64",
+					"DebugGame",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooterEditor Win64 Development Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooterEditor",
+					"Win64",
+					"Development",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooterEditor Win64 Development Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooterEditor",
+					"Win64",
+					"Development",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerShooterEditor Win64 Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooterEditor Win64 Development Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerShooterEditor",
+					"Win64",
+					"Development",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooterEditor Linux Debug Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooterEditor",
+					"Linux",
+					"Debug",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooterEditor Linux Debug Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooterEditor",
+					"Linux",
+					"Debug",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerShooterEditor Linux Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooterEditor Linux Debug Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerShooterEditor",
+					"Linux",
+					"Debug",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooterEditor Linux DebugGame Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooterEditor",
+					"Linux",
+					"DebugGame",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooterEditor Linux DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooterEditor",
+					"Linux",
+					"DebugGame",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerShooterEditor Linux DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooterEditor Linux DebugGame Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerShooterEditor",
+					"Linux",
+					"DebugGame",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooterEditor Linux Development Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooterEditor",
+					"Linux",
+					"Development",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooterEditor Linux Development Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"MultiplayerShooterEditor",
+					"Linux",
+					"Development",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"MultiplayerShooterEditor Linux Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"label": "MultiplayerShooterEditor Linux Development Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"MultiplayerShooterEditor",
+					"Linux",
+					"Development",
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "E:\\UNREAL\\UE_5.3"
+				}
+			}
+		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Launch MultiplayerShooter (Debug)",
+				"request": "launch",
+				"program": "E:\\MyGames\\MultiplayerShooter\\Binaries\\Win64\\UnrealGame-Win64-Debug.exe",
+				"preLaunchTask": "MultiplayerShooter Win64 Debug Build",
+				"args": [
+				],
+				"cwd": "E:\\UNREAL\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "E:\\UNREAL\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch MultiplayerShooter (DebugGame)",
+				"request": "launch",
+				"program": "E:\\MyGames\\MultiplayerShooter\\Binaries\\Win64\\UnrealGame-Win64-DebugGame.exe",
+				"preLaunchTask": "MultiplayerShooter Win64 DebugGame Build",
+				"args": [
+				],
+				"cwd": "E:\\UNREAL\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "E:\\UNREAL\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch MultiplayerShooter (Development)",
+				"request": "launch",
+				"program": "E:\\MyGames\\MultiplayerShooter\\Binaries\\Win64\\UnrealGame.exe",
+				"preLaunchTask": "MultiplayerShooter Win64 Development Build",
+				"args": [
+				],
+				"cwd": "E:\\UNREAL\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "E:\\UNREAL\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch MultiplayerShooter (Test)",
+				"request": "launch",
+				"program": "E:\\MyGames\\MultiplayerShooter\\Binaries\\Win64\\UnrealGame-Win64-Test.exe",
+				"preLaunchTask": "MultiplayerShooter Win64 Test Build",
+				"args": [
+				],
+				"cwd": "E:\\UNREAL\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "E:\\UNREAL\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch MultiplayerShooter (Shipping)",
+				"request": "launch",
+				"program": "E:\\MyGames\\MultiplayerShooter\\Binaries\\Win64\\UnrealGame-Win64-Shipping.exe",
+				"preLaunchTask": "MultiplayerShooter Win64 Shipping Build",
+				"args": [
+				],
+				"cwd": "E:\\UNREAL\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "E:\\UNREAL\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch MultiplayerShooterEditor (Debug)",
+				"request": "launch",
+				"program": "E:\\UNREAL\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-Debug.exe",
+				"preLaunchTask": "MultiplayerShooterEditor Win64 Debug Build",
+				"args": [
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject"
+				],
+				"cwd": "E:\\UNREAL\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "E:\\UNREAL\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch MultiplayerShooterEditor (DebugGame)",
+				"request": "launch",
+				"program": "E:\\UNREAL\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-DebugGame.exe",
+				"preLaunchTask": "MultiplayerShooterEditor Win64 DebugGame Build",
+				"args": [
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject"
+				],
+				"cwd": "E:\\UNREAL\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "E:\\UNREAL\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch MultiplayerShooterEditor (Development)",
+				"request": "launch",
+				"program": "E:\\UNREAL\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor.exe",
+				"preLaunchTask": "MultiplayerShooterEditor Win64 Development Build",
+				"args": [
+					"E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject"
+				],
+				"cwd": "E:\\UNREAL\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "E:\\UNREAL\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "E:\\UNREAL\\UE_5.3"
+				}
+			},
+			{
+				"name": "Generate Project Files",
+				"type": "coreclr",
+				"request": "launch",
+				"preLaunchTask": "UnrealBuildTool Win64 Development Build",
+				"program": "E:\\UNREAL\\UE_5.3\\Engine\\Build\\BatchFiles\\RunUBT.bat",
+				"args": [
+					"-projectfiles",
+					"-vscode",
+					"-project=E:\\MyGames\\MultiplayerShooter\\MultiplayerShooter.uproject",
+					"-game",
+					"-engine",
+					"-dotnet"
+				],
+				"console": "externalTerminal",
+				"stopAtEntry": false,
+				"cwd": "E:\\UNREAL\\UE_5.3"
+			}
 		]
 	}
 }
